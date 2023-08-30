@@ -1,7 +1,35 @@
-<div class="container">
+<div class="container" style="margin: 50px auto">
     <div class="row">
         <p class="text-end">
             Hola {{usuario}}! <a href="/admin/login/logout" class="btn btn-danger">Cerrar Sesion</a>
         </p>
+    </div>
+    <div class="row">
+        <div class="col-7">
+            <h3>Listado de novedades</h3>
+        </div>
+        <div class="col-2">
+            <a href="novedades/agregar" class="btn btn-success">Nuevo</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Acciones</th>
+                </thead>
+                <tbody>
+                    {{#each novedades}}
+                    <tr>
+                        <th scope="row">{{id}}</th>
+                        <td>{{titulo}}</td>
+                        <td><a href="">Editar</a><a href="">Borrar</a></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
